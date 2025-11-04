@@ -39,7 +39,7 @@ export default function Navbar() {
 
   const publicLinks = [
     { path: '/', label: 'Home' },
-    { path: '/ctfs', label: 'CTFs' },
+    // { path: '/ctfs', label: 'CTFs' },
     { path: '/blogs', label: 'Blogs' },
     { path: '/writeups', label: 'Write-ups' },
     { path: '/leaderboard', label: 'Leaderboard' },

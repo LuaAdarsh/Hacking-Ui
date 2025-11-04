@@ -21,9 +21,9 @@ export default function BlogCard({ id, title, excerpt, author, authorAvatar, dat
   return (
     <Link href={`/blog/${id}`}>
       <a data-testid={`card-blog-${id}`}>
-        <Card className="border-primary/20 hover-elevate transition-all duration-300 h-full overflow-hidden">
+        <Card className="border-primary/20 hover-elevate transition-all duration-300 overflow-hidden">
           {thumbnail && (
-            <div className="h-48 overflow-hidden">
+            <div className="aspect-video w-full overflow-hidden">
               <img src={thumbnail} alt={title} className="w-full h-full object-cover" />
             </div>
           )}
@@ -51,16 +51,6 @@ export default function BlogCard({ id, title, excerpt, author, authorAvatar, dat
                     <Calendar className="w-3 h-3" />
                     {new Date(date).toLocaleDateString()}
                   </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <div className="flex items-center gap-1">
-                  <Heart className="w-4 h-4" />
-                  {likes}
-                </div>
-                <div className="flex items-center gap-1">
-                  <MessageCircle className="w-4 h-4" />
-                  {comments}
                 </div>
               </div>
             </div>

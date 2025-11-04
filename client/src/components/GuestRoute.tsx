@@ -14,9 +14,9 @@ export default function GuestRoute({ children }: GuestRouteProps) {
     // If user is already logged in, redirect them to appropriate dashboard
     if (user) {
       if (user.role === 'admin') {
-        setLocation('/admin/dashboard');
+        setLocation('/admin/dashboard', { replace: true });
       } else {
-        setLocation('/dashboard');
+        setLocation('/dashboard', { replace: true });
       }
     }
   }, [user, setLocation]);

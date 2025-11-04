@@ -13,17 +13,17 @@ export default function ProtectedRoute({ children, requireAdmin = false }: Prote
 
   useEffect(() => {
     if (!user) {
-      setLocation('/login');
+      setLocation('/login', { replace: true });
       return;
     }
 
     if (requireAdmin && user.role !== 'admin') {
-      setLocation('/dashboard');
+      setLocation('/dashboard', { replace: true });
       return;
     }
 
     if (!requireAdmin && user.role === 'admin' && window.location.pathname === '/dashboard') {
-      setLocation('/admin/dashboard');
+      setLocation('/admin/dashboard', { replace: true });
       return;
     }
   }, [user, requireAdmin, setLocation]);
